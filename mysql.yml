@@ -1,0 +1,5 @@
+---
+- name: "Play 1: Mysql Installation and configure"
+  hosts: webservers
+  roles: 
+    - myql

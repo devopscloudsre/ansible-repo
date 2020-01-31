@@ -1,0 +1,13 @@
+---
+# defaults file for myql
+  - name: Install Pre-req
+    yum: name=pre-req-packages state=present
+
+  - name: Install Mysql Package
+    yum: name=mysql state=present
+
+  - name: Start Mysql Service
+    service: name=mysql state=started
+
+  - name: Configure Database
+    mysql_db: name=db1 state=present

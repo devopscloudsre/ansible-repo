@@ -1,0 +1,25 @@
+--- #YAML Syntax- just to underc this is YAML
+- name: Play1
+  hosts: webservers
+  tasks:
+    - name: "Install Apache"
+      yum: name=httpd state=present
+    - name: "service start"
+      service: name=httpd state=restarted
+    - name: Stop service httpd, if started
+      service:
+       name: httpd
+       state: stopped
+
+- name: Play2
+  hosts: webservers
+  tasks:
+    - name: "Install Tomcat"
+      yum: name=tomcat7 state=present
+    - name: "service start"
+      service: name=tomcat7 state=restarted
+    - name: Stop service httpd, if started
+      service:
+       name: tomcat7
+       state: stopped
+
